@@ -1,0 +1,20 @@
+<h2>Register</h2>
+<form (ngSubmit)="submitForm()" #regForm="ngForm">
+  <input type="text" name="firstName" placeholder="First Name" [(ngModel)]="model.firstName" required><br><br>
+  <input type="text" name="lastName" placeholder="Last Name" [(ngModel)]="model.lastName" required><br><br>
+  <input type="text" name="username" placeholder="Username" [(ngModel)]="model.username" required><br><br>
+  <input type="email" name="email" placeholder="Email" [(ngModel)]="model.email" required><br><br>
+  <input type="password" name="password" placeholder="Password" [(ngModel)]="model.password" required><br><br>
+  <input type="number" name="age" placeholder="Age" [(ngModel)]="model.age" required><br><br>
+  <input type="date" name="dob" [(ngModel)]="model.dob" required><br><br>
+  <select name="country" [(ngModel)]="model.country" required>
+    <option value="">Select Country</option>
+    <option value="Philippines">Philippines</option>
+    <option value="USA">USA</option>
+  </select><br><br>
+  Gender:
+  <label><input type="radio" name="gender" value="Male" [(ngModel)]="model.gender"> Male</label>
+  <label><input type="radio" name="gender" value="Female" [(ngModel)]="model.gender"> Female</label><br><br>
+  <label><input type="checkbox" name="terms" [(ngModel)]="model.terms"> Agree to terms</label><br><br>
+  <button type="submit" [disabled]="!regForm.form.valid">Submit</button>
+</form>
